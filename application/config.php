@@ -238,4 +238,10 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
+    //微信信息配置
+    'wechat' =>[
+      'AppID' => 'wxc6ab5d5dc79ee4f8',
+      'AppSecret' => '3f2fa8fd64fc552db0a5de3c1d56ee04',
+    ],
 ];
