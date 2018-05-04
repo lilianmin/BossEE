@@ -17,7 +17,7 @@ class Index
         $aa[] = $phone = input('param.phone/s');
         $aa[] = $company_name = input('param.company_name/s');
         $aa[] = $needs_desc = input('param.needs_desc/s');
-
+        echo '<pre>';
         var_dump($aa);
     }
 
