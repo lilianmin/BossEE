@@ -20,8 +20,9 @@ class Index
     }
 
     /**
-     * @api {POST} http://118.25.17.80/index/Index/add_needs  添加用户需求
-     * @apiName add_needs
+     * @api {POST} http://118.25.17.80/index/Index/add_needs
+     * @apiName needs-add_needs
+     * @apiDescription 添加用户需求
      * @apiVersion 1.0.0
      *
      * @apiParam {String} need_name 需求者名称-非空
