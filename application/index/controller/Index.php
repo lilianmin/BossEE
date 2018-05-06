@@ -101,39 +101,5 @@ class Index
 
     }
 
-    /*create table hw_needs (
-    id int primary key auto_increment comment 'needs_id',
-    needs_name varchar(255) comment 'costomer_name',
-    e_mail varchar(255) not null comment 'needs_user_email',
-    phone varchar(255) not null comment 'needs_costomer_phone',
-    company_name varchar(255) not null comment 'needs_company',
-    needs_desc varchar(1000) not null comment 'needs_desc',
-    add_time int not null comment 'add_time'
-    )engine=innodb charset = utf8 comment 'needs_table';*/
-
-    /**
-     * @api {POST} http://118.25.17.80/index/Index/add_needs 添加用户需求
-     * @apiDescription 添加用户需求
-     * @apiVersion 1.0.0
-     *
-     * @apiParam {String} need_name 需求者名称-非空
-     * @apiParam {String} e_mail 用户邮箱-非空邮箱格式
-     * @apiParam  {String} phone 用户电话-非空
-     * @apiParam {String} company_name 需求公司名称-非空
-     * @apiParam  {String} needs_desc 需求描述-非空
-     *
-     * @apiSuccess {Object} code 返回码
-     * @apiSuccess {Object} reason  中文解释
-     * @apiSuccess {String[]} data  返回数据
-     *
-     * @apiSuccessExample {json} Success-Response:
-     *     HTTP/1.1 200 OK
-     *     {
-     *          "code":0,
-     *          "reason":"需求已经提交了，我们的工作人员会在2个工作日内和您取得联系!",
-     *          "data":[]
-     *      }
-     */
-
 
 }
