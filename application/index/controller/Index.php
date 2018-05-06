@@ -22,11 +22,11 @@ class Index
     //@desn:接收需求
     //@param:
     public function add_needs(){
-        $aa[] = $need_name = input('param.need_name/s');
-        $aa[] = $e_mail = Request::instance()->param('e_mail','',FILTER_VALIDATE_EMAIL);
-        $aa[] = $phone = input('param.phone/s');
-        $aa[] = $company_name = input('param.company_name/s');
-        $aa[] = $needs_desc = input('param.needs_desc/s');
+        $need_name = input('param.need_name/s');
+        $e_mail = Request::instance()->param('e_mail','',FILTER_VALIDATE_EMAIL);
+        $phone = input('param.phone/s');
+        $company_name = input('param.company_name/s');
+        $needs_desc = input('param.needs_desc/s');
 
         if(!$need_name){
             $this->return_data['code'] = 2;
@@ -57,9 +57,6 @@ class Index
             $this->return_data['reason'] = '需求描述没填哦!';
             return $this->return_data;
         }
-
-        echo '<pre>';
-        var_dump($aa);
 
         $data = [
             'needs_name'=>$need_name,
