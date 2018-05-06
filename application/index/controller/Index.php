@@ -23,7 +23,6 @@ class Index
      * @api {param} http://118.25.17.80/index/Index/add_needs  添加用户需求
      * @apiName add_needs
      * @apiVersion 1.0.0
-     * @apiParam {Number} id Users unique ID.
      *
      * @apiParam {String} need_name 需求者名称-非空
      * @apiParam {String} e_mail 用户邮箱-非空邮箱格式
