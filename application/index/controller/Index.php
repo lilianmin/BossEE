@@ -19,8 +19,30 @@ class Index
         return '<style type="text/css">*{ padding: 0; margin: 0; } .think_default_text{ padding: 4px 48px;} a{color:#2E5CD5;cursor: pointer;text-decoration: none} a:hover{text-decoration:underline; } body{ background: #fff; font-family: "Century Gothic","Microsoft yahei"; color: #333;font-size:18px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.6em; font-size: 42px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p> ThinkPHP V5<br/><span style="font-size:30px">十年磨一剑 - 为API开发设计的高性能框架</span></p><span style="font-size:22px;">[ V5.0 版本由 <a href="http://www.qiniu.com" target="qiniu">七牛云</a> 独家赞助发布 ]</span></div><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script><script type="text/javascript" src="http://ad.topthink.com/Public/static/client.js"></script><thinkad id="ad_bd568ce7058a1091"></thinkad>';
     }
 
-    //@desn:接收需求
-    //@param:
+    /**
+     * @api {param} http://118.25.17.80/index/Index/add_needs  添加用户需求
+     * @apiName add_needs
+     * @apiVersion 1.0.0
+     * @apiParam {Number} id Users unique ID.
+     *
+     * @apiParam {String} need_name 需求者名称-非空
+     * @apiParam {String} e_mail 用户邮箱-非空邮箱格式
+     * @apiParam  {String} phone 用户电话-非空
+     * @apiParam {String} company_name 需求公司名称-非空
+     * @apiParam  {String} needs_desc 需求描述-非空
+     *
+     * @apiSuccess {Object} code 返回码
+     * @apiSuccess {Object} reason  中文解释
+     * @apiSuccess {String[]} data  返回数据
+     *
+     * @apiSuccessExample {json} Success-Response:
+     *     HTTP/1.1 200 OK
+     *     {
+     *          "code":0,
+     *          "reason":"需求已经提交了，我们的工作人员会在2个工作日内和您取得联系!",
+     *          "data":[]
+     *      }
+     */
     public function add_needs(){
         $need_name = input('param.need_name/s');
         $e_mail = Request::instance()->param('e_mail','',FILTER_VALIDATE_EMAIL);
