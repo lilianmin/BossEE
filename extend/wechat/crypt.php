@@ -160,13 +160,33 @@ class crypt
         $signature = $_GET["signature"];
         $timestamp = $_GET["timestamp"];
         $nonce = $_GET["nonce"];
+        $fp = fopen('./a.txt', 'a+b');
+        fwrite($fp, print_r($token, true));
+        fclose($fp);
+
+        $fp = fopen('./b.txt', 'a+b');
+        fwrite($fp, print_r($signature, true));
+        fclose($fp);
+
+        $fp = fopen('./c.txt', 'a+b');
+        fwrite($fp, print_r($timestamp, true));
+        fclose($fp);
+
+        $fp = fopen('./d.txt', 'a+b');
+        fwrite($fp, print_r($nonce, true));
+        fclose($fp);
+
 
         $tmpArr = array($token,$timestamp, $nonce);
         sort($tmpArr, SORT_STRING);
         $tmpStr = implode($tmpArr);
         $tmpStr = sha1($tmpStr);
 
-        if ($signature === $tmpStr) {
+        $fp = fopen('./e.txt', 'a+b');
+        fwrite($fp, print_r($tmpStr, true));
+        fclose($fp);
+
+        if ($signature == $tmpStr) {
             echo $signature;
         } else {
             echo 'false';
