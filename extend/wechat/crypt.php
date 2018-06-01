@@ -168,9 +168,9 @@ class crypt
         $tmpStr = sha1($tmpStr);
 
         if ($signature == $tmpStr) {
-            return $echostr;
+            echo $echostr;
         } else {
-            return false;
+            echo 'false';
         }
     }
 }
