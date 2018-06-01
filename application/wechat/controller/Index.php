@@ -36,11 +36,8 @@ class Index
      */
     public function access_to_wechat(){
         //获取微信配置
-        $wechatConfigArr = GetPublic::get_wechat_config();
-        $token = $wechatConfigArr['token'];
-        $encodingAesKey = $wechatConfigArr['encodingAesKey'];
-        $appId = $wechatConfigArr['appId'];
-        $wechat = new \wechat\bizmsg\crypt($token, $encodingAesKey, $appId);
+        list($AppID,$AppSecret,$token,$encodingAesKey) = GetPublic::get_wechat_config();
+        $wechat = new \wechat\bizmsg\crypt($token, $encodingAesKey, $AppID);
         $wechat->checkSignature();
     }
     public function test(){
