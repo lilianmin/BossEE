@@ -1,5 +1,5 @@
 <?php
-namespace wechat\bizmsg;
+namespace wechat;
 /**
  * 对公众平台发送给公众账号的消息加解密示例代码.
  *
@@ -7,10 +7,10 @@ namespace wechat\bizmsg;
  */
 
 
-include_once "./wechat/sha1.php";
-include_once "./wechat/xmlparse.php";
-include_once "./wechat/pkcs7Encoder.php";
-include_once "./wechat/errorCode.php";
+include_once "sha1.php";
+include_once "xmlparse.php";
+include_once "pkcs7Encoder.php";
+include_once "errorCode.php";
 
 /**
  * 1.第三方回复加密消息给公众平台；
@@ -169,7 +169,7 @@ class crypt
         if ($signature === $tmpStr) {
             echo $signature;
         } else {
-            return false;
+            echo 'false';
         }
     }
 }

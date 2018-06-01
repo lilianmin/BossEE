@@ -1,6 +1,7 @@
 <?php
 namespace app\wechat\controller;
 use tool\GetPublic;
+use wechat\crypt;
 
 class Index
 {
@@ -37,7 +38,7 @@ class Index
     public function access_to_wechat(){
         //获取微信配置
         list($AppID,$AppSecret,$token,$encodingAesKey) = GetPublic::get_wechat_config();
-        $wechat = new \wechat\bizmsg\crypt($token, $encodingAesKey, $AppID);
+        $wechat = new crypt($token, $encodingAesKey, $AppID);
         $wechat->checkSignature();
     }
     public function test(){
