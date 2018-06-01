@@ -1,20 +1,13 @@
 define({ "api": [
   {
-    "type": "param",
+    "type": "POST",
     "url": "http://118.25.17.80/index/Index/add_needs",
     "title": "添加用户需求",
-    "name": "add_needs",
     "version": "1.0.0",
+    "group": "NEED",
     "parameter": {
       "fields": {
         "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>Users unique ID.</p>"
-          },
           {
             "group": "Parameter",
             "type": "String",
@@ -88,8 +81,8 @@ define({ "api": [
       ]
     },
     "filename": "./application/index/controller/Index.php",
-    "group": "D__Study_brophp_WWW_application_index_controller_Index_php",
-    "groupTitle": "D__Study_brophp_WWW_application_index_controller_Index_php"
+    "groupTitle": "NEED",
+    "name": "PostHttp118251780IndexIndexAdd_needs"
   },
   {
     "success": {
@@ -114,9 +107,9 @@ define({ "api": [
     "type": "",
     "url": "",
     "version": "0.0.0",
-    "filename": "./public/doc/main.js",
-    "group": "D__Study_brophp_WWW_public_doc_main_js",
-    "groupTitle": "D__Study_brophp_WWW_public_doc_main_js",
+    "filename": "./public/apidoc/main.js",
+    "group": "_var_www_html_hello_world_public_apidoc_main_js",
+    "groupTitle": "_var_www_html_hello_world_public_apidoc_main_js",
     "name": ""
   }
 ] });
