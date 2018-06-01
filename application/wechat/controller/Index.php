@@ -35,7 +35,13 @@ class Index
      * @author:yuan<turing_zhy@163.com>
      */
     public function access_to_wechat(){
-        include_once EXTEND_PATH.'wechat/demo.php';
+        //获取微信配置
+        $wechatConfigArr = GetPublic::get_wechat_config();
+        $token = $wechatConfigArr['token'];
+        $encodingAesKey = $wechatConfigArr['encodingAesKey'];
+        $appId = $wechatConfigArr['appId'];
+        $wechat = new \wechat\bizmsg\crypt($token, $encodingAesKey, $appId);
+        $wechat->checkSignature();
     }
     public function test(){
         echo 11111111111;

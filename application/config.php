@@ -244,8 +244,10 @@ return [
     ],
 
     //微信信息配置
-    'wechat' =>[
-      'AppID' => 'wxc6ab5d5dc79ee4f8',
-      'AppSecret' => '3f2fa8fd64fc552db0a5de3c1d56ee04',
+    'wechat' => [
+        'AppID' => 'wxc6ab5d5dc79ee4f8',
+        'AppSecret' => '3f2fa8fd64fc552db0a5de3c1d56ee04',
+        'token' => 'zhy195322',
+        'encodingAesKey' => 'eLtddi52cZrQ5DjJ6GmC7LZJ61eAyXl12VIrLEQ0b55'
     ],
 ];
