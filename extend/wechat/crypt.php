@@ -160,16 +160,17 @@ class crypt
         $signature = $_GET["signature"];
         $timestamp = $_GET["timestamp"];
         $nonce = $_GET["nonce"];
-        
+        $echostr = $_GET['echostr'];
+
         $tmpArr = array($token,$timestamp, $nonce);
         sort($tmpArr, SORT_STRING);
         $tmpStr = implode($tmpArr);
         $tmpStr = sha1($tmpStr);
 
         if ($signature == $tmpStr) {
-            return $signature;
+            return $echostr;
         } else {
-            return 'false';
+            return false;
         }
     }
 }
