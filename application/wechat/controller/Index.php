@@ -51,7 +51,7 @@ class Index
         $signature = $_GET["signature"];
         $timestamp = $_GET["timestamp"];
         $nonce     = $_GET["nonce"];
-        $echostr   = $_GET['echostr'];
+        $echostr   = @$_GET['echostr'];
         $token     = 'skye';
         $tmpArr    = array($token, $timestamp, $nonce);
         sort($tmpArr, SORT_STRING);
