@@ -182,6 +182,7 @@ class Index
      * @return:
      */
     public function feifei_robot($content='天气上海' ){
+        $content = strtr($content,' ','');
         $url = "http://api.qingyunke.com/api.php?key=free&appid=0&msg=$content";
         $return = Helper::callInterfaceCommon($url);
         if($return['result'] == 0){
