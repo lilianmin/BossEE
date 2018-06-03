@@ -1,5 +1,5 @@
 <?php
-
+namespace wechat;
 /**
  * error code 说明.
  * <ul>

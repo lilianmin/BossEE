@@ -1,4 +1,5 @@
 <?php
+namespace wechat;
 include_once "errorCode.php";
 
 /**
