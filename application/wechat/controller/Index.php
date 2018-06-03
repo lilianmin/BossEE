@@ -137,7 +137,7 @@ class Index
                 case 1:
                     $content = '你输入了个数字1';
                     break;
-                case Tel:
+                case 'Tel':
                     $content = '12345678901';
                     break;
                 case '教程':
