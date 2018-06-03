@@ -1,7 +1,7 @@
 <?php
 namespace app\wechat\controller;
 use tool\GetPublic;
-use wechat\crypt;
+use tool\Helper;
 
 class Index
 {
@@ -42,7 +42,7 @@ class Index
 
     public function index()
     {
-        $this->show('This is for Wechat','utf-8');
+        echo 'This is for Wechat';
     }
     //用户首次配置开发环境
     //@param:$token  token
@@ -70,9 +70,6 @@ class Index
     {
         //1.接受数据
         $postArr = file_get_contents('php://input');  //接受xml数据
-        $fp = fopen('./b.txt', 'a+b');
-        fwrite($fp, print_r($postArr, true));
-        fclose($fp);
 
         //2.处理消息类型,推送消息
         $postObj = simplexml_load_string( $postArr );   //将xml数据转化为对象
@@ -147,7 +144,7 @@ class Index
                     $content = "<a href='blog.abc.com'>测试微信</a>";
                     break;
                 default:
-                    $content = '升级打造中...';
+                    $content = $this->feifei_robot($postObj->Content );
                     break;
             }
             $this->wechat_return_text($postObj,$content);
@@ -173,5 +170,21 @@ class Index
                     <Content><![CDATA[%s]]></Content>  
                     </xml>";
         echo sprintf($template, $toUser, $fromUser, $time, $msgType, $content);
+    }
+
+    /*
+     * 调用菲菲机器人接口
+     *
+     * @param:$content  用户发送内容
+     * @return:
+     */
+    private function feifei_robot($content='你好' ){
+        $url = "http://api.qingyunke.com/api.php?key=free&appid=0&msg=$content";
+        $return = Helper::callInterfaceCommon($url);
+        if($return['result'] == 0){
+            return $return['content'];
+        }else{
+            return '恕我直言，菲菲被玩坏了';
+        }
     }
 }
