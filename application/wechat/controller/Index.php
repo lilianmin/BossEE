@@ -1,5 +1,5 @@
 <?php
-namespace app\wechat\controller;
+//namespace app\wechat\controller;
 use tool\GetPublic;
 use wechat\crypt;
 
