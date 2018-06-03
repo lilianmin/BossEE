@@ -53,7 +53,10 @@ class crypt
 	 */
 	public function encryptMsg($replyMsg, $timeStamp, $nonce, &$encryptMsg)
 	{
-		$pc = new Prpcrypt($this->encodingAesKey);
+        $fp = fopen('./a.txt', 'a+b');
+        fwrite($fp, print_r($this->encodingAesKey, true));
+        fclose($fp);
+        $pc = new Prpcrypt($this->encodingAesKey);
 
 		//加密
 		$array = $pc->encrypt($replyMsg, $this->appId);
