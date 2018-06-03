@@ -185,7 +185,7 @@ class Index
         $url = "http://api.qingyunke.com/api.php?key=free&appid=0&msg=$content";
         $return = Helper::callInterfaceCommon($url);
         if($return['result'] == 0){
-            return str_replace('{br}','\n',$return['content']);
+            return str_replace('{br}',"\n",$return['content']);
         }else{
             return '恕我直言，菲菲被玩坏了';
         }
