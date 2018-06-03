@@ -32,7 +32,7 @@ class Index
      */
     public function access_to_wechat(){
         //获取微信配置
-        list($AppID,$AppSecret,$token,$encodingAesKey) = GetPublic::get_wechat_config();
+        //list($AppID,$AppSecret,$token,$encodingAesKey) = GetPublic::get_wechat_config();
         $this->reposeMsg();
     }
     public function test(){
