@@ -32,8 +32,8 @@ class Index
      */
     public function access_to_wechat(){
         //获取微信配置
-        //list($AppID,$AppSecret,$token,$encodingAesKey) = GetPublic::get_wechat_config();
-        $this->reposeMsg();
+        list($AppID,$AppSecret,$token,$encodingAesKey) = GetPublic::get_wechat_config();
+        $this->echoStr($token);
     }
     public function test(){
         echo 11111111111;
@@ -51,7 +51,7 @@ class Index
         $signature = $_GET["signature"];
         $timestamp = $_GET["timestamp"];
         $nonce     = $_GET["nonce"];
-        $echostr   = $_GET['echostr'];
+        $echostr   = @$_GET['echostr'];
         $token     = 'skye';
         $tmpArr    = array($token, $timestamp, $nonce);
         sort($tmpArr, SORT_STRING);
