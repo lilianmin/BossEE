@@ -42,7 +42,7 @@ class Index
         //接入服务器验证
         //$wechat->checkSignature();
 
-        include_once "wxBizMsgCrypt.php";
+        //include_once "wxBizMsgCrypt.php";
 
         // 第三方发送消息给公众平台
         $timeStamp = time();
