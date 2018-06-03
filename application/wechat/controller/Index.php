@@ -69,7 +69,11 @@ class Index
     public function reposeMsg()
     {
         //1.接受数据
-        $postArr = $GLOBALS['HTTP_RAW_POST_DATA'];  //接受xml数据
+        $postArr = file_get_contents('php://input');  //接受xml数据
+        $fp = fopen('./b.txt', 'a+b');
+        fwrite($fp, print_r($postArr, true));
+        fclose($fp);
+
         //2.处理消息类型,推送消息
         $postObj = simplexml_load_string( $postArr );   //将xml数据转化为对象
         if( strtolower( $postObj->MsgType ) == 'event')
