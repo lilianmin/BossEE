@@ -181,11 +181,12 @@ class Index
      * @param:$content  用户发送内容
      * @return:
      */
-    private function feifei_robot($content='你好' ){
+    public function feifei_robot($content='天气上海' ){
         $url = "http://api.qingyunke.com/api.php?key=free&appid=0&msg=$content";
         $return = Helper::callInterfaceCommon($url);
         if($return['result'] == 0){
-            return str_replace($return['content'],'{br}',"\n");
+            return $return['content'];
+            return str_replace($return['content'],'{br}','\n');
         }else{
             return '恕我直言，菲菲被玩坏了';
         }
