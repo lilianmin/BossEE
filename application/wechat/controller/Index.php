@@ -181,8 +181,8 @@ class Index
      * @param:$content  用户发送内容
      * @return:
      */
-    public function feifei_robot($content='天气上海' ){
-        $content = strtr($content,' ','');
+    private function feifei_robot($content='天气 上海' ){
+        $content = Helper::trimall($content);  //http传输去除空格
         $url = "http://api.qingyunke.com/api.php?key=free&appid=0&msg=$content";
         $return = Helper::callInterfaceCommon($url);
         if($return['result'] == 0){

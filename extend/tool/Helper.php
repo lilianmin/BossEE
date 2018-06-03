@@ -83,7 +83,22 @@ class Helper
         {
             return $file_contents;
         }
+    }
 
+    /*
+     * 去除字符串中的空格
+     *
+     * @param:$str 传入字符串
+     * @return: str 替换后的字符串
+     */
+    static function trimall($str)
+    {
+
+        $oldchar = array(" ", "　", "\t", "\n", "\r");
+
+        $newchar = array("", "", "", "", "");
+
+        return str_replace($oldchar, $newchar, $str);
 
     }
 }
