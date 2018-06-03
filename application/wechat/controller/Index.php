@@ -143,6 +143,9 @@ class Index
                 case '博客':
                     $content = "<a href='blog.abc.com'>测试微信</a>";
                     break;
+                case '测试':
+                    $content = "测试\n测试\n";
+                    break;
                 default:
                     $content = $this->feifei_robot($postObj->Content );
                     break;
